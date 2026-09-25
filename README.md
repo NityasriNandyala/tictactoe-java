@@ -1,112 +1,104 @@
-# 🎮 Tic-Tac-Toe (Java Swing)
+# 🎮 Tic-Tac-Toe (Web & Java Desktop)
 
-A modern, desktop Tic-Tac-Toe game developed in Java using the **Swing** and **AWT** graphical libraries. Features a sleek dark theme, real-time score keeping across multiple rounds, visual win/tie highlights, and a dynamic game restart button.
-
----
-
-## ✨ Features
-
-- **🎮 2-Player Interactive Board**: Classic 3x3 grid for Player X and Player O.
-- **🏆 Persistent Score Keeping**: Tracks total wins for Player X and Player O across rounds without resetting between games.
-- **🔄 Smart Restart Button (`JButton`)**:
-  - Automatically activates whenever a game ends in a win or tie.
-  - Disabled during active play to prevent accidental resets.
-  - Seamlessly clears the board and begins a new round with Player X.
-- **🎨 Visual Status Indicators**:
-  - **Winning Line**: Highlights the 3 winning tiles in vibrant **green** (`Color.green`).
-  - **Tie Game**: Highlights all tiles in **orange** (`Color.orange`) when all 9 turns end in a draw.
-  - **Turn Indicator**: Real-time header updates indicating whose turn it is (`X's turn.` / `O's turn.`).
-- **🌙 Sleek Dark Mode UI**: Modern dark gray and white color palette with custom typography.
+A feature-rich Tic-Tac-Toe application available in two editions:
+1. **🌐 Modern Web Edition** (Mobile-style responsive UI with Solo vs Bot, Friend Mode, Authentication, and GitHub Pages support).
+2. **☕ Classic Java Swing Desktop Edition** (Standalone GUI with persistent score tracking and dynamic restart button).
 
 ---
 
-## 📁 Project Structure
+## 🌐 Web Edition (GitHub Pages)
+
+Play the interactive game in any mobile or desktop browser without installing anything!
+
+- **🔗 Live Demo**: [https://nityasrinandyala.github.io/tictactoe-java/](https://nityasrinandyala.github.io/tictactoe-java/)
+
+### 📱 User Flow & Features
+
+```text
+Login / Guest ➔ Create Account ➔ Home ➔ Game Rules ➔ Play Solo / Play with Friend ➔ Game
+```
+
+- **🎮 Mobile-Style Dark Blue UI**: Custom mobile shell on desktop, native fullscreen on smartphones.
+- **🔐 Login & 📝 Create Account**: Demo user authentication stored in browser `localStorage`. Includes a one-click **⚡ Instant Play as Guest** button.
+- **👤 Interactive Home Screen**: Status bar clock, user avatar, theme toggle, and game mode selection.
+- **📖 Game Rules Screen**: Illustrated visual rule cards with mini 3x3 diagrams for **WIN**, **DEFEAT**, and **DRAW**.
+- **🤖 Easy Mode (vs Bot)**: Play as coral `○` against an AI bot playing neon green `✕` with realistic response timing.
+- **👥 Friend Mode**: Pass-and-play on the same device with alternating turns.
+- **🏆 Persistent Score Keeping**: Automatically tracks and stores your wins and losses across matches in `localStorage`.
+- **🔄 Reset Game**: Instantly clears the 3x3 board for a rematch without losing your overall score.
+- **🔊 Web Audio API Sound FX**: Built-in synthesized sound effects for placement, victory, defeat, and draw without external media dependencies.
+
+### 🌐 GitHub Pages Deployment Guide
+
+To host this web edition on your own GitHub account:
+
+1. Push this repository to GitHub on the `main` branch.
+2. Go to your repository on GitHub: **`https://github.com/NityasriNandyala/tictactoe-java`**.
+3. Click on the **Settings** tab (gear icon at the top).
+4. In the left sidebar, click on **Pages** (under the "Code and automation" section).
+5. Under **Build and deployment**:
+   - **Source**: Select `Deploy from a branch`.
+   - **Branch**: Choose `main` and set the folder to `/ (root)`.
+   - Click **Save**.
+6. Wait 1–2 minutes. GitHub will provide your live URL:
+   ```text
+   https://<your-username>.github.io/tictactoe-java/
+   ```
+
+---
+
+## ☕ Java Swing Desktop Edition
+
+For users running the local desktop version with Java.
+
+### ✨ Features
+- **2-Player Interactive Board**: 3x3 grid for Player X and Player O.
+- **Persistent Score Tracking**: Tracks wins for Player X and Player O across rounds.
+- **Smart Restart Button (`JButton`)**: Activates automatically on win or tie; disabled during active play.
+- **Visual Status Indicators**: Highlights winning lines in green (`Color.green`) and ties in orange (`Color.orange`).
+- **Dark Theme**: Modern dark gray and white Swing palette.
+
+### 🛠️ Prerequisites & Installation
+
+- **JDK 8 or newer** (JDK 17 or 21 recommended).
+- Optional installation on Windows via Command Prompt (Administrator):
+  ```cmd
+  winget install --id Microsoft.OpenJDK.21 -e --source winget
+  ```
+  Verify with:
+  ```cmd
+  java -version
+  javac -version
+  ```
+
+### 🚀 How to Run the Java Edition
+
+```cmd
+cd /d "C:\Users\nandy\Downloads\tictactoe-java-master\tictactoe-java-master"
+javac *.java
+java App
+```
+
+---
+
+## 📁 Repository Structure
 
 ```text
 tictactoe-java/
-├── App.java          # Entry point (initializes the game instance)
-├── TicTacToe.java    # Complete GUI layout, event listeners, and game logic
-└── README.md         # Comprehensive project documentation
+├── index.html        # Web app markup (Login, Register, Home, Rules, Game)
+├── style.css         # Responsive mobile-style dark blue stylesheet
+├── script.js         # Game engine, AI logic, local authentication, sound synthesis
+├── App.java          # Java desktop application entry point
+├── TicTacToe.java    # Java Swing GUI layout, listeners, and score tracking
+└── README.md         # Complete documentation and deployment guide
 ```
 
 ---
 
-## 🛠️ Prerequisites & Installation
+## 🎯 Gameplay Rules
 
-### Requirements
-- **Java Development Kit (JDK)**: Version 8 or newer (JDK 17 or 21 recommended).
-- **Operating System**: Windows, macOS, or Linux.
-
-### Installing Java on Windows (Optional)
-If `javac` or `java` is not yet installed or recognized in your terminal, open Command Prompt as Administrator and run:
-
-```cmd
-winget install --id Microsoft.OpenJDK.21 -e --source winget
-```
-
-After installation, close and reopen Command Prompt and verify:
-
-```cmd
-java -version
-javac -version
-```
-
----
-
-## 🚀 How to Run
-
-### Option 1: Command Line (CMD / PowerShell / Terminal)
-
-1. **Navigate to the project directory**:
-   ```cmd
-   cd /d "C:\Users\nandy\Downloads\tictactoe-java-master\tictactoe-java-master"
-   ```
-
-2. **Compile the source files**:
-   ```cmd
-   javac *.java
-   ```
-
-3. **Run the game**:
-   ```cmd
-   java App
-   ```
-
----
-
-### Option 2: Visual Studio Code
-
-1. Open the project folder in **VS Code**.
-2. Ensure the **Extension Pack for Java** is installed.
-3. Open `App.java` and click the **Run** button (or press `F5`).
-
----
-
-## 🎯 How to Play
-
-1. **Start Game**: The application opens with Player X's turn by default.
-2. **Make a Move**: Click any empty square on the 3x3 board to place your mark.
-3. **Turn Progression**: Moves alternate automatically between Player X and Player O.
-4. **Winning**: The first player to align 3 consecutive marks horizontally, vertically, or diagonally wins the match:
-   - The winning tiles turn **green**.
-   - The winner is announced in the header.
-   - The winner's score increments by 1.
-5. **Draw / Tie**: If all 9 tiles are filled without a 3-in-a-row combination:
-   - All tiles turn **orange**.
-   - The header displays `"Tie!"`.
-6. **Play Again**: Click **Restart Game** at the bottom to reset the board. Scores remain saved so you can play a full series!
-
----
-
-## 🧠 Technical Overview
-
-- **Framework**: Java Swing (`JFrame`, `JPanel`, `JButton`, `JLabel`, `BorderLayout`, `GridLayout`).
-- **Game State Management**:
-  - 2D array of `JButton[3][3]` for tile management and text checking.
-  - State flags: `gameOver` boolean and `turns` integer counter.
-  - Dedicated score variables (`playerXScore`, `playerOScore`) that persist independently of board resets.
-- **Event-Driven Architecture**: Action listeners attached to board tiles and control buttons for reactive UI updates without external dependencies.
-
----
-
-
+1. Player 1 starts the game by marking an empty square.
+2. Players take turns selecting empty squares on the 3x3 board.
+3. The first player to align 3 consecutive marks horizontally, vertically, or diagonally wins the match.
+4. If all 9 squares are filled without a 3-in-a-row combination, the match ends in a draw.
+5. Click **Reset Game** to play again.

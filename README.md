@@ -1,9 +1,5 @@
 # 🎮 Tic-Tac-Toe (Java Swing)
 
-![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
-![Swing](https://img.shields.io/badge/GUI-Swing%20%2F%20AWT-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
-
 A modern, desktop Tic-Tac-Toe game developed in Java using the **Swing** and **AWT** graphical libraries. Features a sleek dark theme, real-time score keeping across multiple rounds, visual win/tie highlights, and a dynamic game restart button.
 
 ---
@@ -113,6 +109,4 @@ javac -version
 
 ---
 
-## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
